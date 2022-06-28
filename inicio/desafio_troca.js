@@ -1,7 +1,8 @@
-let a = 7
-let b = 94
 
-console.log(a, b)
+let a = 7;
+let b = 94;
+
+console.log(a, b);
 
 // solução convencional
 // let z = a
