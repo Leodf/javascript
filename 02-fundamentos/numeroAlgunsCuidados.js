@@ -4,3 +4,5 @@ console.log('show' * 2)
 console.log(0.1 + 0.7)
 // console.log(10.toFixed())
 console.log((10.8653).toFixed(2))
+console.log('3' + 2) // o sinal de + faz sentido no mundo da string
+console.log('3' - 2)
