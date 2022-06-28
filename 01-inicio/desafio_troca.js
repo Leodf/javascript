@@ -9,8 +9,8 @@ console.log(a, b);
 // a = b
 // b = z
 
-// solução reduzida
+// solução reduzida para funcionar precisa colocar ponto e virgula
 
-[a, b] = [b, a]
+[a, b] = [b, a];
 
-console.log(a, b)
+console.log(a, b);
