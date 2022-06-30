@@ -3,7 +3,7 @@ function getInteiroAleatorioEntre(min, max) {
     return Math.floor(valor)
 }
 
-let opcao = -1
+let opcao
 
 do {
     opcao = getInteiroAleatorioEntre(-1, 10)
