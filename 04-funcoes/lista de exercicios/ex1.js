@@ -13,3 +13,12 @@ imprimirResultado(3, 5, soma)
 imprimirResultado(3, 5, sub)
 imprimirResultado(3, 5, mult)
 imprimirResultado(3, 5, div)
+
+
+// forma mais simples
+
+function Operacoes(a, b) {
+    console.log(a+b, a-b, a*b, a/b)
+}
+
+Operacoes(3, 5)
