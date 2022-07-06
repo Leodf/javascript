@@ -3,11 +3,11 @@
  */
 
 function tratamentoNota (nota) {
-    if (nota % 5 == 0){
-        return nota
-    } else {
+    if (nota % 5 > 2){
         let novaNota = nota - (nota % 5) + 5
         return novaNota
+    } else {
+        return nota
     }
 }
 
@@ -15,14 +15,20 @@ function sistemaNota (nota) {
     if (nota < 0 || nota > 100){
         return 'Nota inválida'
     } 
-    else if (nota < 36 ) {
-        return 'Aluno reprovado'
-    } else {
+    else if (nota >= 40 ) {
         const resultado = tratamentoNota(nota)
-        return `Aluno aprovado com a nota ${resultado}`
+        return console.log(`Aluno aprovado com a nota ${resultado}`) 
+    } else {
+        return console.log('Aluno reprovado')
     }
     
 }
 
 
-console.log(sistemaNota(100))
+sistemaNota(100)
+sistemaNota(30)
+sistemaNota(37)
+sistemaNota(38)
+sistemaNota(88)
+sistemaNota(87)
+sistemaNota(61)
