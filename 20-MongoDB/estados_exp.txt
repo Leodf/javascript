@@ -1,0 +1,79 @@
+db.Estados.insert({ 
+nome: "São Paulo", 
+sigla: "SP", 
+regiao: "Sudeste", 
+cidades: [{ 
+                _id: ObjectId(), 
+                nome: "Campinas", 
+                area: 795.7, 
+                prefeito: "Jonas Donizette",
+                populacao: 1081000
+        },
+        {
+                _id: ObjectId(),
+                nome: "Guarulhos",
+                populacao: 1325000
+        },
+        {
+                _id: ObjectId(),
+                nome: "Sorocaba",
+                distanciaCapital: 87,
+                populacao: 644919
+        }]
+})
+
+WriteResult({ "nInserted" : 1 })
+
+> db.Estados.find().pretty()
+{
+        "_id" : ObjectId("62ffb2077c2ecebb86d04a6e"),
+        "nome" : "Acre",
+        "sigla" : "AC",
+        "regiao" : "Norte"
+}
+{
+        "_id" : ObjectId("62ffb2627c2ecebb86d04a6f"),
+        "nome" : "Alagoas",
+        "sigla" : "AL",
+        "regiao" : "Nordeste",
+        "populacao" : 3322000
+}
+{
+        "_id" : ObjectId("62ffb37c7c2ecebb86d04a70"),
+        "nome" : "Rio de Janeiro",
+        "sigla" : "RJ",
+        "regiao" : "Sudeste",
+        "cidades" : [
+                {
+                        "nome" : "Niteroi",
+                        "area" : 133.9,
+                        "populacao" : 487562
+                }
+        ]
+}
+{
+        "_id" : ObjectId("62ffb6697c2ecebb86d04a74"),
+        "nome" : "São Paulo",
+        "sigla" : "SP",
+        "regiao" : "Sudeste",
+        "cidades" : [
+                {
+                        "_id" : ObjectId("62ffb6697c2ecebb86d04a71"),
+                        "nome" : "Campinas",
+                        "area" : 795.7,
+                        "prefeito" : "Jonas Donizette",
+                        "populacao" : 1081000
+                },
+                {
+                        "_id" : ObjectId("62ffb6697c2ecebb86d04a72"),
+                        "nome" : "Guarulhos",
+                        "populacao" : 1325000
+                },
+                {
+                        "_id" : ObjectId("62ffb6697c2ecebb86d04a73"),
+                        "nome" : "Sorocaba",
+                        "distanciaCapital" : 87,
+                        "populacao" : 644919
+                }
+        ]
+}
