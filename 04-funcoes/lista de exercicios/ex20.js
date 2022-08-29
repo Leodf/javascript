@@ -77,7 +77,7 @@ function sacarDinheiro(valorSaque) {
     return elaborarResultado(contador100, contador50, contador10, contador5, contador1)
 }
 
-console.log(sacarDinheiro(177))
+console.log(sacarDinheiro(1526))
 //for(i = 0; i <= 100; i++) {
    // console.log(notasNecessarias(i))
 //}
