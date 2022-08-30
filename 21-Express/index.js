@@ -1,8 +1,12 @@
+const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
 
 const saudacao = require('./saudacaoMid')
 
+app.use(bodyParser.text())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(saudacao('Leonardo'))
 
 app.use('/opa', (req, res, next) => {
@@ -15,14 +19,16 @@ app.get('/clientes/relatorio', (req, res) => {
 })
 
 app.post('/corpo', (req, res) => {
-    let corpo = ''
-    req.on('data', function(parte) {
-        corpo += parte
-    })
+    // let corpo = ''
+    // req.on('data', function(parte) {
+    //     corpo += parte
+    // })
 
-    req.on('end', function() {
-        res.json(corpo)
-    })
+    // req.on('end', function() {
+    //     res.json(corpo)
+    // })
+    res.send(req.body)
+
 })
 
 app.get('/clientes/:id', (req, res) => {
@@ -60,5 +66,5 @@ app.use('/opa', (req, res, next) => {
 })
 
 app.listen(3000, () => {
-    console.log('Backend executando...')
+    console.log('Backend executando..')
 })
