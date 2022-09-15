@@ -1,4 +1,4 @@
 module.exports = app => {
     app.route('/users')
-        .post(app.api.user.save)
+        .post(app.src.api.user.save)
 }

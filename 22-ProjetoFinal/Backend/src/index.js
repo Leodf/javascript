@@ -6,9 +6,9 @@ const PORTA = 3000
 app.db = db
 
 consign()
-    .then('./config/middlewares.js')
-    .then('./api')
-    .then('./config/routes.js')
+    .then('./src/config/middlewares.js')
+    .then('./src/api')
+    .then('./src/config/routes.js')
     .into(app)
 
 
