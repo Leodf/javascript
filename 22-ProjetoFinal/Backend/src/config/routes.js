@@ -6,4 +6,13 @@ module.exports = app => {
     app.route('/users/:id')
         .put(app.src.api.user.save)
         .get(app.src.api.user.getById)
+
+    app.route('/categories')
+        .get(app.src.api.category.get)
+        .post(app.src.api.category.save)
+
+    app.route('/categories/:id')
+        .get(app.src.api.category.getById)
+        .put(app.src.api.category.save)
+        .delete(app.src.api.category.remove)
 }
