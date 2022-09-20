@@ -1,4 +1,9 @@
 module.exports = app => {
+
+    app.post('/signup', app.src.api.user.save)
+    app.post('/signin', app.src.api.auth.signin)
+    app.post('/validateToken', app.src.api.auth.validateToken)
+
     app.route('/users')
         .post(app.src.api.user.save)
         .get(app.src.api.user.get)
@@ -28,4 +33,7 @@ module.exports = app => {
         .get(app.src.api.article.getById)
         .put(app.src.api.article.save)
         .delete(app.src.api.article.remove)
+
+    app.route('/categories/:id/articles')
+        .get(app.src.api.article.getByCategory)
 }
