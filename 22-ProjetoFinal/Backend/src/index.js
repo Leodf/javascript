@@ -6,6 +6,7 @@ const PORTA = 3000
 app.db = db
 
 consign()
+    .include('./src/config/passport.js')
     .then('./src/config/middlewares.js')
     .then('./src/api/validation.js')
     .then('./src/api')
