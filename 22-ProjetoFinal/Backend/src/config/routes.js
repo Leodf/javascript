@@ -46,4 +46,8 @@ module.exports = app => {
     app.route('/categories/:id/articles')
         .all(app.src.config.passport.authenticate())
         .get(app.src.api.article.getByCategory)
+
+    app.route('/stats')
+        .all(app.src.config.passport.authenticate())
+        .get(app.src.api.stat.get)
 }
