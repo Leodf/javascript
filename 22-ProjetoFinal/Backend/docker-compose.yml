@@ -2,10 +2,12 @@ version: '3'
 services:
     db:
         image: 'postgres:latest'
+        env_file:
+          - .env_docker
         environment:
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_USER: postgres
-          POSTGRES_DB: knowledge
+          POSTGRES_PASSWORD: ${DB_USERNAME}
+          POSTGRES_USER: ${DB_PASSWORD}
+          POSTGRES_DB: ${DB_DATABASE}
         volumes:
           - ./pgdata:/var/lib/postgresql/data
         ports:
@@ -13,6 +15,8 @@ services:
     
     mongodb:
         image: 'mongo:latest'
+        env_file:
+          - .env_docker
         restart: always
         container_name: mongo-test
         ports:
@@ -20,6 +24,6 @@ services:
         volumes:
           - ./mongodata:/var/lib/mongodb/data
         environment:
-          MONGO_INITDB_ROOT_USERNAME: root
-          MONGO_INITDB_ROOT_PASSWORD: admin
-          MONGO_INITDB_DATABASE: knowledge_stats
+          MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USERNAME}
+          MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD}
+          MONGO_INITDB_DATABASE: ${MONGODB_DATABASE}
