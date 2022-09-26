@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
     .content {
-        grid-area: 'content';
+        grid-area: content;
         background-color: #efefef;
         padding: 20px;
     }
