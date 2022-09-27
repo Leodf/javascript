@@ -6,17 +6,21 @@
     <h1 class="title">
         {{ title }}
     </h1>
+    <UserDropdown v-if="!hideUserDropdown" />
   </header>
 </template>
 
 <script>
+import UserDropdown from './UserDropdown.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
     name: 'HeaderVue',
+    components: { UserDropdown },
     props: {
       title: String,
-      hideToggle: Boolean
+      hideToggle: Boolean,
+      hideUserDropdown: Boolean
     },
     computed: {
       ...mapGetters(['estadoMenu']),
