@@ -3,7 +3,7 @@
     <div class="user-button">
         <div class="d-none d-sm-block">{{ pegarUsuario.name }}</div>
         <div class="user-dropdown-img">
-            <Gravatar :email="pegarUsuario.email" alt="User"/>
+            <img :src="gravatar" alt="User">
         </div>
         <i class="fa fa-angle-down"></i>
     </div>
@@ -16,13 +16,18 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { Gravatar } from 'vue-gravatar'
-
+import md5 from 'md5'
 
 export default {
     name: 'UserDropdown',
-    components: { Gravatar },
-    computed: mapGetters(['pegarUsuario'])
+    computed: {
+        ...mapGetters(['pegarUsuario']),
+        gravatar() {
+            const adress = this.pegarUsuario.email.trim().toLowerCase()
+            const hash = md5(adress)
+            return `https://www.gravatar.com/avatar/${hash}?d=wavatar`
+            } 
+        }
 }
 </script>
 
