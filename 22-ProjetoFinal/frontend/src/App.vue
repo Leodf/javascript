@@ -1,12 +1,14 @@
 <template>
-    <HeaderVue title="Cod3r - Base de Conhecimento" :hideToggle="false"/>
-    <MenuVue />
-    <ContentVue />
-    <FooterVue />
+    <div id="principal" :class="{'hide-menu': !estadoMenu}">
+      <HeaderVue title="Cod3r - Base de Conhecimento" :hideToggle="false"/>
+      <MenuVue />
+      <ContentVue />
+      <FooterVue />
+    </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 import MenuVue from './components/template/MenuVue.vue'
 import ContentVue from './components/template/ContentVue.vue'
 import HeaderVue from './components/template/HeaderVue.vue'
@@ -15,7 +17,7 @@ import FooterVue from './components/template/FooterVue.vue'
 export default {
   name: 'App',
   components: { FooterVue, HeaderVue, ContentVue, MenuVue },
-  computed: mapState(['isMenuVisible'])
+  computed: mapGetters(['estadoMenu'])
 }
 </script>
 
@@ -29,7 +31,7 @@ export default {
     padding: 0;
   }
 
-  #app {
+  #principal {
     -webkit-font-smoothnig: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -43,7 +45,7 @@ export default {
       "menu footer";
   }
 
-  #app.hide-menu {
+  #principal.hide-menu {
     grid-template-areas:
       "header header"
       "content content"

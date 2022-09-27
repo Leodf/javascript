@@ -2,6 +2,12 @@ const moduloToggleMenu = {
     state: {
         isMenuVisible: true
     },
+    getters: {
+        estadoMenu: state => state.isMenuVisible
+    },
+    actions: {
+        mudarEstado: ({ commit }) => commit('toggleMenu')
+    },
     mutations: {
         toggleMenu(state, isVisible) {
             if (isVisible === undefined) {

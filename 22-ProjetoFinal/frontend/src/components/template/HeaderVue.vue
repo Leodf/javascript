@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <a class="toggle" @click="toggleMenu" v-if="!hideToggle">
+    <a class="toggle" @click="mudarEstado" v-if="!hideToggle">
       <i class="fa fa-lg" :class="icon"></i>
     </a>
     <h1 class="title">
@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
     name: 'HeaderVue',
     props: {
@@ -17,16 +19,13 @@ export default {
       hideToggle: Boolean
     },
     computed: {
+      ...mapGetters(['estadoMenu']),
       icon() {
-        return "fa-angle-left"
+        return this.estadoMenu ? "fa-angle-left" : "fa-angle-down"
       }
     },
-    methods: {
-      toggleMenu() {
-        this.$store.commit('toggleMenu')
-      }
+    methods: mapActions(['mudarEstado'])
     }
-}
 </script>
 
 <style scoped>
