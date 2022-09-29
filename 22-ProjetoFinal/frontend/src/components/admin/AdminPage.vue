@@ -8,7 +8,7 @@
 import PageTitle from '../template/PageTitle.vue'
 
 export default {
-    name: 'AdminPages',
+    name: 'AdminPage',
     components: { PageTitle }
 }
 </script>
