@@ -15,8 +15,6 @@ const moduloToggleMenu = {
             } else {
                 state.isMenuVisible = isVisible
             }
-
-            console.log('toggleMenu = ' + state.isMenuVisible)
         }
     }
 }

@@ -6,6 +6,10 @@
                 icon="fa fa-folder" color="#d54d50" />
             <StatVue title="Artigos" :value="stat.articles"
                 icon="fa fa-file" color="#3bc480" />
+            <StatVue title="Usuários Ativos" :value="stat.activeUsers"
+                icon="fa fa-user" color="#3282cd" />
+            <StatVue title="Usuários Totais" :value="stat.totalUsers"
+                icon="fa fa-user" color="#58355E" />
         </div>
     </div>
 </template>
@@ -36,5 +40,9 @@ export default {
 </script>
 
 <style>
-
+    .stats {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 </style>
