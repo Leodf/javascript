@@ -4,12 +4,12 @@
         <div class="admin-pages-tabs">
             <tabsVue :options="{ useUrlFragment: false }">
                 <tabVue name="Artigos">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic incidunt voluptas, tempora perspiciatis ducimus iusto doloremque magni vitae, nesciunt sequi consequuntur. Ut repudiandae atque minima illo maiores reprehenderit magnam?
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic incidunt voluptas, tempora perspiciatis ducimus iusto doloremque magni vitae, nesciunt sequi consequuntur. Ut repudiandae atque minima illo maiores reprehenderit magnam?</p>
                 </tabVue>
-                <tabVue name="Second tab">
+                <tabVue name="Categorias">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quae nostrum harum voluptatem iure architecto cum a. Iste et consequatur, fuga nostrum deserunt amet qui inventore repudiandae neque magnam ipsum ex, maxime quia illum minus labore? Quae reiciendis id, aspernatur beatae neque porro aliquid a?
                 </tabVue>
-                <tabVue name="Third tab">
+                <tabVue name="Usuários">
                     Third tab content
                 </tabVue>
             </tabsVue>
@@ -67,6 +67,10 @@ export default {
         display: flex;
         padding: 0.75em 1em;
         text-decoration: none;
+    }
+
+    .tabs-component-tab-a:hover {
+        color: #7778;
     }
 
     .tabs-component-panels {
