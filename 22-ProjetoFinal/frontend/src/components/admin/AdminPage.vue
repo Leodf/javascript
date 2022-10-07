@@ -4,13 +4,13 @@
         <div class="admin-pages-tabs">
             <tabsVue :options="{ useUrlFragment: false }">
                 <tabVue name="Artigos">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic incidunt voluptas, tempora perspiciatis ducimus iusto doloremque magni vitae, nesciunt sequi consequuntur. Ut repudiandae atque minima illo maiores reprehenderit magnam?</p>
+                    <ArticleAdmin />
                 </tabVue>
                 <tabVue name="Categorias">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quae nostrum harum voluptatem iure architecto cum a. Iste et consequatur, fuga nostrum deserunt amet qui inventore repudiandae neque magnam ipsum ex, maxime quia illum minus labore? Quae reiciendis id, aspernatur beatae neque porro aliquid a?
+                    <CategoryAdmin />
                 </tabVue>
                 <tabVue name="Usuários">
-                    Third tab content
+                    <UserAdmin />
                 </tabVue>
             </tabsVue>
         </div>
@@ -19,10 +19,13 @@
 
 <script>
 import PageTitle from '../template/PageTitle.vue'
+import ArticleAdmin from './ArticleAdmin.vue'
+import CategoryAdmin from './CategoryAdmin.vue'
+import UserAdmin from './UserAdmin.vue'
 
 export default {
     name: 'AdminPage',
-    components: { PageTitle },
+    components: { PageTitle, ArticleAdmin, CategoryAdmin, UserAdmin },
 
 }
 </script>
