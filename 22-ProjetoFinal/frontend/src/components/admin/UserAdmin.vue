@@ -1,6 +1,10 @@
 <template>
     <div class="user-admin">
-        <h1>Usuários Componente</h1>
+        <h1>Componente Usuários</h1>
+        <!-- <EasyDataTable
+            :headers="headers"
+            :items="items"
+        /> -->
     </div>
 </template>
 
@@ -14,7 +18,9 @@ export default {
         return {
             mode: 'save',
             user: {},
-            users: []
+            users: [],
+            headers: [],
+            items: []
         }
     },
     methods: {
@@ -23,7 +29,9 @@ export default {
             axios.get(url).then(res => {
                 this.users = res.data
                 console.log(this.users)
+                console.log(typeof (this.users))
             })
+            
         }
     },
     mounted() {
