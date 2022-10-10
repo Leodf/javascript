@@ -1,10 +1,14 @@
 <template>
     <div class="user-admin">
         <h1>Componente Usuários</h1>
-        <!-- <EasyDataTable
+        <EasyDataTable
+            buttons-pagination
             :headers="headers"
-            :items="items"
-        /> -->
+            :items="users"
+            :rows-per-page="5"
+            :rows-items="[5, 10, 20]"
+            alternating
+        />
     </div>
 </template>
 
@@ -19,8 +23,13 @@ export default {
             mode: 'save',
             user: {},
             users: [],
-            headers: [],
-            items: []
+            headers: [
+                {text: 'Código', value: 'id', sortable:'true'},
+                {text: 'Nome', value: 'name', sortable:'true'},
+                {text: 'E-mail', value: 'email', sortable:'true'},
+                {text: 'Administrador', value: 'admin', sortable:'true'},
+                {text: 'Ações', value: 'actions'},
+            ],
         }
     },
     methods: {
@@ -28,10 +37,7 @@ export default {
             const url = `${baseApiUrl}/users`
             axios.get(url).then(res => {
                 this.users = res.data
-                console.log(this.users)
-                console.log(typeof (this.users))
             })
-            
         }
     },
     mounted() {

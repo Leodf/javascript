@@ -10,9 +10,11 @@ module.exports = app => {
 
     const save = async (req, res) => {
         const user = { ...req.body }
+        const hasUrlUsers = req.originalUrl
+        
         if(req.params.id) user.id = req.params.id
 
-        if(!req.originalUrl.startWith('/users')) user.admin = false
+        if(!hasUrlUsers.startsWith('/users')) user.admin = false
         if(!req.user || !req.user.admin) user.admin = false
 
         try{
