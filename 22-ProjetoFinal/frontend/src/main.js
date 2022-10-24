@@ -11,7 +11,7 @@ import {Tabs, Tab} from 'vue3-tabs-component'
 import Vue3EasyDataTable from 'vue3-easy-data-table'
 
 // TEMPORARIO
-require('axios').defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ikxlb25hcmRvIGRlIEZhdmVyaSIsImVtYWlsIjoiZmF2ZXJfaUBob3RtYWlsLmNvbSIsImFkbWluIjoidHJ1ZSIsImlhdCI6MTY2NTQxNzQ0NywiZXhwIjoxNjY1Njc2NjQ3fQ.oPL_CVkRa4pWRNVXeHbVlje0VuhdgrMM0bAjBKzYQ_U'
+require('axios').defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ikxlb25hcmRvIGRlIEZhdmVyaSIsImVtYWlsIjoiZmF2ZXJfaUBob3RtYWlsLmNvbSIsImFkbWluIjoidHJ1ZSIsImlhdCI6MTY2NjYyMDI2MCwiZXhwIjoxNjY2ODc5NDYwfQ.uz5McLwFr0JqOAuMP68OL9MR6SHfcEnLpnjPTb_I9Yo'
 
 const app = createApp(App)
 app.use(store)

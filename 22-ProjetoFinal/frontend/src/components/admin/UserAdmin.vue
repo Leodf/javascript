@@ -31,8 +31,9 @@
                 <label for="user-admin">Administrador?</label>
             </div>
             <div class="form-button">
-                <button v-if="mode ==='save'" @click="save">Salvar</button>
-                <button>Excluir</button>
+                <button class="button button-primary" v-if="mode ==='save'" @click="save">Salvar</button>
+                <button class="button button-danger" v-if="mode ==='remove'" @click="remove">Excluir</button>
+                <button class="button button-secondary" @click="reset">Cancelar</button>
             </div>
         </form>
         <EasyDataTable
@@ -72,6 +73,34 @@ export default {
             axios.get(url).then(res => {
                 this.users = res.data
             })
+        },
+        reset() {
+            this.mode = 'save'
+            this.user = {}
+            this.loadUsers()
+        },
+        save() {
+            const method = this.user.id ? 'put' : 'post'
+            const id = this.user.id ? `/${this.user.id}` : ''
+            axios[method](`${baseApiUrl}/users${id}`, this.user)
+                .then(() => {
+                    alert('Usuário criado com sucesso!')
+                    this.reset()
+                })
+                .catch(() => {
+                    alert('Algo deu errado')
+                })
+        },
+        remove() {
+            const id = this.user.id
+            axios.delete(`${baseApiUrl}/users/${id}`)
+                .then(() => {
+                    alert('Usuário deletado com sucesso!')
+                    this.reset()
+                })
+                .catch(() => {
+                    alert('algo deu errado')
+                })
         }
     },
     mounted() {
@@ -108,6 +137,50 @@ export default {
     .form-admin {
         margin-bottom: 10px;
     }
+
+    .form-button {
+        display: flex;
+        column-gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .button {
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 24px;
+	text-decoration:none;
+    }
+
+    .button:active {
+        position:relative;
+        top:1px;
+    }
+
+    .button-primary {
+        background-color:#63b8ee;
+        border:1px solid #3866a3;
+    }
+
+    .button-primary:hover {
+        background-color:#468ccf;
+    }
+
+    .button-secondary {
+        background-color:#9c9c9c;
+        border:1px solid #757575;
+    }
+
+    .button-secondary:hover {
+        background-color:#646464;
+    }
+
+
+
+    
 
 
 </style>

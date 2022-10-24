@@ -1,6 +1,6 @@
 const moduloToggleMenu = {
     state: {
-        isMenuVisible: true
+        isMenuVisible: false
     },
     getters: {
         estadoMenu: state => state.isMenuVisible
