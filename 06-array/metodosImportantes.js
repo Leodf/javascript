@@ -1,3 +1,4 @@
+
 const pilotos = ['Vettel', 'Alonso', 'Raikkonen', 'Massa']
 pilotos.pop() // massa quebrou o carro!
 console.log(pilotos)
@@ -21,8 +22,8 @@ console.log(pilotos)
 pilotos.splice(3, 1) // massa quebrou
 console.log(pilotos)
 
-const algunsPilotos1 = pilotos.slice(2) //novo array
-console.log(algunsPilotos1)
+// const algunsPilotos1 = pilotos.slice(2) //novo array
+// console.log(algunsPilotos1)
 
-const algunsPilotos2 = pilotos.slice(1, 4)
-console.log(algunsPilotos2)
+// const algunsPilotos2 = pilotos.slice(1, 4)
+// console.log(algunsPilotos2)
